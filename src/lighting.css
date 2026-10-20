@@ -1,0 +1,18 @@
+/* Approved bright lighting, shared by the installed theme and reconstructed preview. */
+html[data-blue-hour-glass] body {
+  background-color: rgb(40, 54, 68) !important;
+  background-blend-mode: screen !important;
+}
+html[data-blue-hour-glass] body,
+html[data-blue-hour-glass] body[data-ds-dark-theme] {
+  --dsw-alias-bg-base: rgba(10, 22, 38, .10) !important;
+  --dsw-specific-sidebar-fill: rgba(231, 241, 250, .09) !important;
+}
+html[data-blue-hour-glass] body::after {
+  background: radial-gradient(120% 95% at 50% 38%, transparent 38%, rgba(3, 8, 18, .18) 100%) !important;
+}
+html[data-blue-hour-glass] [data-composer-card],
+html[data-blue-hour-glass] .cJsG2q_bubble {
+  background: rgba(34, 51, 70, .34) !important;
+}
+html[data-blue-hour-glass] .placeholder { color: rgba(218, 230, 242, .78); }

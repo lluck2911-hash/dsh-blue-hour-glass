@@ -1,0 +1,57 @@
+/* The guide's central compass only; tab and entry icons keep their own colors. */
+[data-blue-hour-glass] [data-sidebar-right-guide] > [aria-hidden="true"] {
+  color: #fff !important;
+}
+
+/* Keep the host's pointer capture, resize math, wheel forwarding and overlay rules. */
+[data-blue-hour-glass] [data-width-handle] {
+  width: clamp(0px, calc((100% - var(--dsh-chat-content-width)) / 2 - 48px), 24px) !important;
+  cursor: col-resize !important;
+  touch-action: none;
+  user-select: none;
+  overflow: hidden;
+  outline: none;
+}
+[data-blue-hour-glass] [data-width-handle]::after {
+  content: "" !important;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50% !important;
+  bottom: auto !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translate(-50%, -50%);
+  width: 18px !important;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, .62);
+  border-radius: 9px !important;
+  background: rgba(18, 32, 51, .74) !important;
+  box-shadow: 0 1px 5px #0003;
+  opacity: .9 !important;
+  pointer-events: none;
+  transition: background 120ms, border-color 120ms;
+}
+[data-blue-hour-glass] [data-width-handle]::before {
+  content: "↔";
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font: 600 14px/1 system-ui, sans-serif;
+  pointer-events: none;
+}
+[data-blue-hour-glass] [data-width-handle]:hover::after,
+[data-blue-hour-glass] [data-width-handle]:focus-visible::after,
+[data-blue-hour-glass] [data-width-handle][data-dragging]::after {
+  background: rgba(48, 100, 154, .92) !important;
+  border-color: #fff;
+}
+[data-blue-hour-glass] [data-width-handle]:focus-visible::after {
+  outline: 2px solid #a9d7ff;
+  outline-offset: 1px;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-blue-hour-glass] [data-width-handle]::after { transition: none; }
+}

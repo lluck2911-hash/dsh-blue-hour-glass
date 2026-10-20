@@ -1,0 +1,104 @@
+
+/* Liquid Glass v1 - backdrop + translucent surfaces (no backdrop-filter) */
+html{background:#08131f !important}
+body{
+  background-image:url("__BLUE_HOUR_WALLPAPER__") !important;
+  background-size:cover !important;
+  background-position:center 72% !important;
+  background-repeat:no-repeat !important;
+  background-attachment:fixed !important;
+}
+body,
+body[data-ds-dark-theme]{
+  --dsw-alias-bg-base:rgba(10,22,38,.20) !important;
+  --dsw-alias-bg-layer-1:rgba(255,255,255,.085) !important;
+  --dsw-alias-bg-layer-2:rgba(255,255,255,.12) !important;
+  --dsw-alias-bg-layer-3:rgba(255,255,255,.16) !important;
+  --dsw-alias-bg-overlay:rgba(18,30,48,.55) !important;
+  --dsw-specific-sidebar-fill:rgba(255,255,255,.07) !important;
+  --dsw-alias-border-l1:rgba(255,255,255,.14) !important;
+  --dsw-alias-border-l2:rgba(255,255,255,.26) !important;
+  --dsw-alias-label-primary:rgba(255,255,255,.96) !important;
+  --dsw-alias-label-secondary:rgba(255,255,255,.74) !important;
+  --dsw-alias-label-tertiary:rgba(255,255,255,.54) !important;
+  --dsw-alias-state-idle-primary:rgba(255,255,255,.45) !important;
+}
+body::after{
+  content:"" !important;
+  position:fixed !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  z-index:0 !important;
+  background:radial-gradient(120% 95% at 50% 38%,rgba(0,0,0,0) 38%,rgba(3,8,18,.52) 100%) !important;
+}
+
+/* ==== 1. composer: glass + hairline ==== */
+[data-composer-card]{background:rgba(18,26,40,.42) !important;-webkit-backdrop-filter:blur(24px) saturate(1.7) !important;backdrop-filter:blur(24px) saturate(1.7) !important;border:1px solid rgba(255,255,255,.22) !important;box-shadow:0 10px 34px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.10) !important;}
+
+/* ==== 2. scrollbar: glass + hairline ==== */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent !important}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.20) !important;border:1px solid rgba(255,255,255,.34) !important;border-radius:999px !important;-webkit-backdrop-filter:blur(12px) saturate(1.4) !important;backdrop-filter:blur(12px) saturate(1.4) !important;}
+::-webkit-scrollbar-corner{background:transparent !important}
+
+/* ==== 3. dock panel surface: glass + hairline (no layout props!) ==== */
+[class*="_surface_6nhg2_125"]{-webkit-backdrop-filter:blur(20px) saturate(1) !important;backdrop-filter:blur(20px) saturate(1) !important;box-shadow:inset 2px 0 0 0 rgba(255,255,255,.22) !important;}
+
+/* ==== left rail glass (marked by JS) ==== */
+[data-lg-rail]{-webkit-backdrop-filter:blur(20px) saturate(1.5) !important;backdrop-filter:blur(20px) saturate(1.5) !important;box-shadow:inset -2px 0 0 0 rgba(255,255,255,.22) !important;}
+
+/* ==== settings panel: glass + hairline ==== */
+[data-shortcut-modal="settings"]{-webkit-backdrop-filter:blur(24px) saturate(1.6) !important;backdrop-filter:blur(24px) saturate(1.6) !important;border:1px solid rgba(255,255,255,.22) !important;}
+
+/* ==== new-chat button: glass, no dark fill, white hairline ==== */
+[data-lg-newchat]{background:rgba(255,255,255,.07) !important;-webkit-backdrop-filter:blur(20px) saturate(1.5) !important;backdrop-filter:blur(20px) saturate(1.5) !important;border:1px solid rgba(255,255,255,.30) !important;box-shadow:none !important;}
+
+/* User message glass - 2026-10-13 */
+.cJsG2q_bubble {
+  background: rgba(18,26,40,.42) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.7) !important;
+  backdrop-filter: blur(24px) saturate(1.7) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), inset 0 1px 0 rgba(255,255,255,.10), 0 8px 24px rgba(0,0,0,.16) !important;
+}
+/* Sidebar controls repair - 2026-10-13 */
+[data-lg-rail] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+.BynINW_sidebarCol { position: relative; }
+.BynINW_sidebarCol::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  backdrop-filter: blur(20px) saturate(1.5);
+}
+._2H3hWW_root { position: relative; }
+._2H3hWW_toggle, [data-sidebar-right-expand], [data-sidebar-right-toggle] {
+  color: rgba(255,255,255,.96) !important;
+  background: rgba(24,42,62,.72) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.38) !important;
+  cursor: pointer !important;
+  -webkit-app-region: no-drag;
+}
+[data-sidebar-right-expand], [data-sidebar-right-toggle] {
+  width: auto !important;
+  min-width: 90px;
+  gap: 5px;
+  padding: 0 8px !important;
+}
+[data-sidebar-right-expand]::after { content: "展开右栏"; font-size: 12px; white-space: nowrap; }
+[data-sidebar-right-toggle]::after { content: "收起右栏"; font-size: 12px; white-space: nowrap; }
+/* Keep a collapsed right dock from painting over its reopen control. */
+.OUqwTW_panel:not([data-sidebar-right-open]) [class*="_surface_6nhg2_125"] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+/* Remove the session-list fade plate over the continuous glass sidebar. */
+.BynINW_sidebarCol ._9lTDKa_fade {
+  display: none !important;
+}

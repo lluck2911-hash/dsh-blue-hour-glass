@@ -1,0 +1,9 @@
+dist/
+node_modules/
+*.bak
+*.original.js
+*.local.js
+.env*
+.credentials*
+sessions/
+backups/

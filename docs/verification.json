@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-20",
+  "environment": "Isolated Microsoft Edge, real host CSS and width event functions with a minimal React mounting adapter; not a full desktop integration test",
+  "checks": [
+    "原版罗盘深灰问题已复现",
+    "未修改的原版模块：白色罗盘、拖拽记忆、复位、键盘和宽度限制通过；没有双重处理",
+    "滚轮转发、输入覆盖层隐藏、窄窗口裁切通过",
+    "停用清理：样式、DOM 属性与键盘监听均恢复",
+    "已有本地补丁模块：白色罗盘、拖拽记忆、复位、键盘和宽度限制通过；没有双重处理",
+    "滚轮转发、输入覆盖层隐藏、窄窗口裁切通过",
+    "停用清理：样式、DOM 属性与键盘监听均恢复",
+    "已部署的本机主题：白色罗盘、拖拽记忆、复位、键盘和宽度限制通过；没有双重处理",
+    "滚轮转发、输入覆盖层隐藏、窄窗口裁切通过",
+    "停用清理：样式、DOM 属性与键盘监听均恢复",
+    "浏览器运行错误 0；外部网络请求 0"
+  ],
+  "consoleErrors": 0,
+  "externalRequests": 0
+}

@@ -1,0 +1,72 @@
+{
+  "name": "dsh-blue-hour-glass",
+  "version": "0.1.3",
+  "description": "海岸落日蓝调时刻磨砂玻璃 / Coastal Sunset · Blue Hour Frosted Glass：提亮的海岸暮光背景、柔和右栏玻璃、白色罗盘与常驻宽度拖拽手柄。",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "assets",
+    "src",
+    "scripts/build.mjs",
+    "scripts/install.ps1",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "docs"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/package.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-plugin-theme",
+    "deepseek-harness",
+    "theme",
+    "skin",
+    "glassmorphism",
+    "wallpaper",
+    "accessibility"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    },
+    "marketplace": {
+      "profiles": [
+        "web",
+        "desktop"
+      ],
+      "requiresBuildApproval": false,
+      "requiresRestart": true,
+      "manualSteps": false
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lluck2911-hash/dsh-blue-hour-glass.git"
+  },
+  "homepage": "https://github.com/lluck2911-hash/dsh-blue-hour-glass#readme",
+  "bugs": {
+    "url": "https://github.com/lluck2911-hash/dsh-blue-hour-glass/issues"
+  },
+  "author": "lluck2911-hash"
+}

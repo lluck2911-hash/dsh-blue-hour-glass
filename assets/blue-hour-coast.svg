@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <title>Blue Hour Coast</title>
+  <desc>Original procedural blue-hour coast, created for Blue Hour Glass. MIT License.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#06253b"/>
+      <stop offset=".43" stop-color="#355c78"/>
+      <stop offset=".65" stop-color="#92718f"/>
+      <stop offset=".81" stop-color="#e18a9c"/>
+      <stop offset="1" stop-color="#f0a58e"/>
+    </linearGradient>
+    <linearGradient id="sea" x2="0" y2="1">
+      <stop stop-color="#a37c93"/>
+      <stop offset=".3" stop-color="#555775"/>
+      <stop offset="1" stop-color="#102b40"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".68" cy=".76" r=".6">
+      <stop stop-color="#ffb2a0" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#ee9bb0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="13"/></filter>
+    <filter id="haze"><feGaussianBlur stdDeviation="35"/></filter>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1920v1080H0z"/>
+  <path fill="url(#glow)" d="M0 0h1920v1080H0z"/>
+  <path fill="url(#sea)" d="M0 790Q700 778 1920 790v290H0z"/>
+  <g fill="none" filter="url(#soft)">
+    <path d="M-80 817Q750 795 2000 825M-60 863Q900 831 2000 865" stroke="#edaaa7" stroke-width="10" opacity=".45"/>
+    <path d="M-50 854Q850 880 1990 850M-60 938Q950 909 1980 943" stroke="#233950" stroke-width="24" opacity=".6"/>
+    <path d="M-40 906Q600 879 1990 916M-20 979Q750 954 1950 989" stroke="#b28ba1" stroke-width="9" opacity=".4"/>
+    <path d="M-30 1023Q800 1001 1980 1042" stroke="#071e32" stroke-width="28" opacity=".65"/>
+  </g>
+  <ellipse cx="1250" cy="785" rx="480" ry="26" fill="#ffc4ac" opacity=".22" filter="url(#haze)"/>
+</svg>
